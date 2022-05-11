@@ -9,6 +9,7 @@
 \setmainfont{Times New Roman}
 \graphicspath{ {./images/} }
 
+
 %Setelan BibLatex
 \AtBeginBibliography{%
   \renewcommand*{\finalnamedelim}{%
@@ -36,6 +37,16 @@
    \addstretch{\belowdisplayshortskip}
    \setlength{\parskip}{0pt}}
   {\newpage}
+
+% Ubah biblatex ke indonesia
+\NewBibliographyString{mybahasa}
+\DefineBibliographyStrings{english}{%
+  and = {dan},
+  urlseen = {diakses pada}
+}
+
+% Ubah judul daftar isi (aslinya inggris)
+\renewcommand{\contentsname}{Daftar Isi}
 
 \begin{document}
 \title{{\large PROPOSAL PRA SKRIPSI\\
