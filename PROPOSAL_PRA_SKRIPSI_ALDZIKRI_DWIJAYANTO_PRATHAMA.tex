@@ -4,9 +4,10 @@
 \usepackage{adjustbox}
 \usepackage{fontspec}
 \usepackage{graphicx}
+\usepackage{microtype}
 \usepackage{csquotes}
 \usepackage[style="authoryear"]{biblatex}
-\usepackage[australian,american]{babel}
+\usepackage[british,main=american]{babel}
 \addbibresource{pustaka.bib}
 \setmainfont{Times New Roman}
 \graphicspath{ {./images/} }
@@ -49,7 +50,10 @@
 }
 
 % Ubah judul daftar isi (aslinya inggris)
-\renewcommand{\contentsname}{Daftar Isi}
+\addto\captionsamerican{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Daftar Isi}%
+}
 
 \begin{document}
 \subfile{bagian/cover}
