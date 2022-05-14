@@ -7,11 +7,14 @@
 \usepackage{microtype}
 \usepackage{csquotes}
 \usepackage[style="authoryear"]{biblatex}
-\usepackage[british,main=american]{babel}
+\usepackage[british]{babel}
 \addbibresource{pustaka.bib}
 \setmainfont{Times New Roman}
 \graphicspath{ {./images/} }
 \usepackage{subfiles}
+
+% Daftar pemenggalan suku kata dan istilah dalam LaTeX
+\input{_internals/hype.indonesia}
 
 
 %Setelan BibLatex
@@ -50,7 +53,7 @@
 }
 
 % Ubah judul daftar isi (aslinya inggris)
-\addto\captionsamerican{% Replace "english" with the language you use
+\addto\captionsbritish{% Replace "english" with the language you use
   \renewcommand{\contentsname}%
     {Daftar Isi}%
 }
