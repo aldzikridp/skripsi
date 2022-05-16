@@ -31,9 +31,8 @@
   membuat sistem keamanan jaringan yang murah untuk bisnis
   kelas menengah ke bawah, dengan menggunakan Raspberry-pi
   sebagai perangkat kerasnya. Sedangkan di bagian perangkat
-  lunak, digunakan Dnsmasq dan Squid proxy. Kedua perangkat
-  lunak tersebut digunakan untuk memblokir domain dan url
-  yang dianggap berbahaya.
+  lunak, digunakan Dnsmasq. Dnsmasq digunakan sebagai DNS
+  \textit{filtering} dari domain yang dianggap berbahaya.
 
   \paragraph*{} Prosiding oleh \cite{wahyudi2020}, dengan
   judul \citetitle{wahyudi2020}. Penelitian ini membahas
@@ -49,4 +48,22 @@
   transmisi menggunakan RED dan PCQ dan menggunakan Sistem
   pi-hole di server untuk meminimalkan iklan yang muncul di
   protokol UDP.
+
+  \newpage
+
+\begin{longtable}{|>{\hspace{0pt}}m{0.20\linewidth}|>{\hspace{0pt}}m{0.30\linewidth}|>{\hspace{0pt}}m{0.10\linewidth}|>{\hspace{0pt}}m{0.40\linewidth}|} 
+\hline
+\textbf{Penulis}   & \textbf{Judul Penelitian} & \textbf{Tools}               & \textbf{Hasil}                                                                                                                                                                                                                                                \endfirsthead 
+\hline
+\cite{uni2021}     & \citetitle{uni2021}       & pi-hole, OpenVPN, dan docker & Server vpn dengan menggunakan protokol OpenVPN, yang menggunakan pi-hole sebagai sistem blocking domain berbahaya. Server tersebut berjalan di dalam docker container.                                                                                        \\ 
+\hline
+\cite{yusoff2020}  & \citetitle{yusoff2020}    & pi-hole dan raspberry pi     & DNS Filtering dengan menggunakan pi-hole yang berjalan di atas raspberry pi. Selain itu dengan menggunakan regular expression, pi-hole dapat mengenali situs-situs dewasa sehingga dapat menjadi solusi parental control.                                     \\ 
+\hline
+\cite{sarath2020}  & \citetitle{sarath2020}    & Dnsmasq                      & Server DNS dengan menggunakan Dnsmasq yang berjalan di atas raspberry pi. Sistem ini dapat menjadi pilihan untuk mencegah client mengakses domain yang berbahaya. Sistem ini dapat menjadi pilihan untuk diimplementasikan di usaha kelas menengah ke bawah.  \\ 
+\hline
+\cite{wahyudi2020} & \citetitle{wahyudi2020}   & pi-hole, ubuntu server       & Server DNS pi-hole yang berjalan di atas sistem operasi ubuntu server. Sistem ini diimplementasikan oleh penulis di jaringan SMK TIK Darussalam Medan.                                                                                                        \\ 
+\hline
+\cite{habibi2022}  & \citetitle{habibi2022}    & pi-hole                      & DNS filtering diimplementasikan di jaringan sehingga mengurangi penggunaan data pada jaringan internet warga, sehingga jaringan tersebut lebih optimal.                                                                                                       \\
+\hline
+\end{longtable}
 \end{document}
