@@ -1,0 +1,71 @@
+\documentclass[../PROPOSAL_PRA_SKRIPSI_ALDZIKRI_DWIJAYANTO_PRATHAMA.tex]{subfiles}
+\begin{document}
+\bagian{Dasar Teori}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{Mitmproxy}
+  \paragraph*{}Mitmproxy adalah seperangkat alat yang
+  menyediakan proxy yang mampu mencegat SSL/TLS untuk
+  protokol HTTP/1, HTTP/2, dan WebSockets(\cite{mitm}).
+
+  \paragraph*{}Fitur dari Mitmproxy antara lain mencegat
+  \textit{request} dan \textit{response} dari  HTTP dan
+  HTTPS dan memodifikasinya, Kemampuan untuk mengubah lalu
+  lintas HTTP dengan menggunakan \textit{script} Python,
+  dll(\cite{mitm}).
+
+  \item \textbf{HTTPS}
+  \paragraph*{}HTTPS (Hypertext Transfer Protocol Secure)
+  adalah protokol komunikasi internet yang melindungi
+  integritas dan kerahasiaan data antara komputer pengguna
+  dan situs. Pengguna menginginkan pengalaman online yang
+  aman dan bersifat pribadi saat menggunakan situs.
+
+  \paragraph*{}Data yang dikirim menggunakan HTTPS diamankan
+  melalui protokol Transport Layer Security (TLS), yang
+  memberikan tiga lapis perlindungan utama:
+  \begin{enumerate}
+    \item Enkripsi\\
+      Mengenkripsi data pertukaran untuk menjaga keamanannya
+      dari penyadap. Artinya, saat pengguna menjelajahi
+      situs, tidak ada yang dapat "menguping" percakapan,
+      melacak aktivitas di berbagai halaman, atau mencuri
+      informasi mereka.
+    \item Integritas data\\
+      Data tidak dapat diubah atau dirusak selama transfer,
+      dengan sengaja atau tidak, tanpa terdeteksi.
+    \item Autentikasi\\
+      Membuktikan bahwa pengguna Anda berkomunikasi dengan
+      situs yang diinginkan. Protokol tersebut melindungi
+      dari serangan \textit{man in the middle} dan membangun
+      kepercayaan pengguna, yang dapat memberikan keuntungan
+      lain untuk bisnis Anda.
+  \end{enumerate}
+  (\cite{googledev-https})
+
+  \item \textbf{Web Content Filtering}
+    \paragraph*{}Web content filtering merupakan saringan
+    konten website yang digunakan oleh perorangan, kelompok,
+    maupun organisasi untuk melakukan penyaringan terhadap
+    situs-situs yang tidak diperbolehkan oleh pihak berwenang
+    maupun yang tidak berhubungan dengan tujuan bisnis atau
+    organisasi agar tidak dapat diakses(\cite{dewi2021}).
+
+  \item \textbf{Proxy Server}
+     \paragraph*{}Proxy server (peladen proxy) adalah sebuah
+     komputer server atau program komputer yang dapat bertindak
+     sebagai komputer lainnya untuk melakukan request terhadap
+     content dari Internet atau Intranet(\cite{rendra2013}).
+    
+     \paragraph*{}Proxy server bertindak sebagai gateway
+     terhadap dunia ini Internet untuk setiap komputer clien.
+     Proxy server tidak terlihat oleh komputer client: seorang
+     pengguna yang berinteraksi dengan Internet melalui sebuah
+     proxy server tidak akan mengetahui bahwa sebuah proxy
+     server sedang menangani request yang dilakukannya. Web
+     server yang menerima request dari proxy server akan
+     menginterpretasikan request-request tersebut seolah-olah
+     request itu datang secara langsung dari komputer client,
+     bukan dari proxy server(\cite{rendra2013}).
+
+\end{enumerate}
+\end{document}
