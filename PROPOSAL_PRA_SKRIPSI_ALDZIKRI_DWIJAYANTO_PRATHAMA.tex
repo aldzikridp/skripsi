@@ -9,6 +9,9 @@
 \usepackage{csquotes}
 \usepackage{array}
 \usepackage{longtable}
+\usepackage{titlesec} %untuk setel judul bab
+\usepackage{setspace} %untuk spacing
+\usepackage[a4paper, tmargin=4cm, bmargin=3cm, lmargin=4cm, rmargin=3cm]{geometry}
 \usepackage[style="authoryear"]{biblatex}
 \usepackage[british]{babel}
 \usepackage{subfiles}
@@ -19,12 +22,15 @@
 % Daftar pemenggalan suku kata dan istilah dalam LaTeX
 \input{_internals/hype.indonesia}
 
-%%%%%% Setelan chapter %%%%%
-\renewcommand\thesection{\Alph{section}.}
-\renewcommand\thesubsection{\thesection.\Alph{subsection}.}
-\renewcommand\thesubsubsection{\thesection.\thesubsection. \Alph{susubbsection}.}
+%%%%%% Setelan section %%%%%
 
-\newcommand{\bagian}[1]{\flushleft{\section{#1}}}
+%%% Tambah bab X, sebelum judul bab dan jadikan judul di tengah. UNCOMMENT KETIKA SKRIPSI!!!!
+%\titleformat{\section}[display]{\normalfont\Large\bfseries\filcenter}{Bab \thesection}{12pt}{}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\thesection.\thesubsection. \arabic{subsubsection}.}
+
+\newcommand{\bagian}[1]{\section{#1}}
 \newcommand{\subbagian}[1]{\flushleft{\subsection{#1}}}
 \newcommand{\subsubbagian}[1]{\flushleft{\subsubsection{#1}}}
 
@@ -71,24 +77,27 @@
    \setlength{\parskip}{0pt}}
   {\newpage}
 
+%%%%% Spacing %%%%%
+% Spacing = 2, sesuai pedoman proposal skripsi
+\doublespacing
+
 
 \begin{document}
+\begin{singlespace}
 \subfile{bagian/cover}
 \newpage
 \tableofcontents
 \newpage
+\end{singlespace}
 \subfile{bagian/lembar_persetujuan}
 
 
 \newpage
-%\flushleft{\section{Latar Belakang}}
-\subfile{bagian/latar_belakang}
-\subfile{bagian/rumusan_masalah}
-\subfile{bagian/ruang_lingkup}
-\subfile{bagian/tujuan_penelitian}
-\subfile{bagian/tinjauan_pustaka}
-\subfile{bagian/dasar_teori}
+\subfile{bagian/bab_1/bab_1}
 
+\subfile{bagian/bab_2/bab_2}
+
+\subfile{bagian/bab_3/bab_3}
 
 \newpage
 \printbibliography[title=Daftar Pustaka]
