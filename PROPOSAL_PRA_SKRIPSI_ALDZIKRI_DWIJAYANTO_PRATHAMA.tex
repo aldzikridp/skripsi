@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,12pt]{article}%ubah ke report ketika skripsi
 \usepackage{multirow}
 \usepackage{enumitem}
 \usepackage{adjustbox}
@@ -24,15 +24,10 @@
 
 %%%%%% Setelan section %%%%%
 
-%%% Tambah bab X, sebelum judul bab dan jadikan judul di tengah. UNCOMMENT KETIKA SKRIPSI!!!!
-%\titleformat{\section}[display]{\normalfont\Large\bfseries\filcenter}{Bab \thesection}{12pt}{}
-\renewcommand{\thesection}{\arabic{section}}
-\renewcommand{\thesubsection}{\thesection.\arabic{subsection}.}
-\renewcommand{\thesubsubsection}{\thesection.\thesubsection. \arabic{subsubsection}.}
+\titleformat{\chapter}[display]{\normalfont\LARGE\bfseries\filcenter}{Bab \thechapter}{5pt}{\huge}
+% Buat judul chapter lebih ke-atas
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
 
-\newcommand{\bagian}[1]{\section{#1}}
-\newcommand{\subbagian}[1]{\flushleft{\subsection{#1}}}
-\newcommand{\subsubbagian}[1]{\flushleft{\subsubsection{#1}}}
 
 %%%%% Setelan daftar isi %%%%%
 %%%%% Memerlukan paket tocloft %%%%%
