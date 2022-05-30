@@ -72,20 +72,22 @@
    \setlength{\parskip}{0pt}}
   {\newpage}
 
-%%%%% Spacing %%%%%
-% Spacing = 2, sesuai pedoman proposal skripsi
-\doublespacing
-
 
 \begin{document}
+%%% Spacing = 1
 \begin{singlespace}
+
 \subfile{bagian/cover}
 \newpage
 \tableofcontents
 \newpage
-\end{singlespace}
-\subfile{bagian/lembar_persetujuan}
 
+\end{singlespace}
+
+%%% Spacing = 2
+\begin{doublespace}
+
+\subfile{bagian/lembar_persetujuan}
 
 \newpage
 \subfile{bagian/bab_1/bab_1}
@@ -96,5 +98,7 @@
 
 \newpage
 \printbibliography[title=Daftar Pustaka]
+
+\end{doublespace}
 
 \end{document}
