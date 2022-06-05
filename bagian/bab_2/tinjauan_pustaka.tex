@@ -51,21 +51,17 @@
 
   %\newpage
 
-  \begin{longtable}{|>{\hspace{0pt}}m{0.15\linewidth}|>{\hspace{0pt}}m{0.25\linewidth}|>{\hspace{0pt}}m{0.10\linewidth}|>{\hspace{0pt}}m{0.35\linewidth}|} 
-  \hline
-  \textbf{Penulis}   & \textbf{Judul Penelitian} & \textbf{Tools}               & \textbf{Hasil}                                                                                                                                                                                                                                                \endfirsthead 
-  \hline
+  \DefTblrTemplate{caption-tag}{default}{\textbf{Tabel\hspace{0.25em}\thetable}}
+  \DefTblrTemplate{contfoot-text}{default}{Bersambung ke halaman berikutnya}
+  \DefTblrTemplate{conthead-text}{default}{(Bersambung)}
+  \begin{longtblr}{hlines, vlines, column{1}={0.15\linewidth}, column{2}={0.25\linewidth}, column{3}={0.10\linewidth}, column{4}={0.35\linewidth}} 
+  \textbf{Penulis}   & \textbf{Judul Penelitian} & \textbf{Tools}               & \textbf{Hasil}\\
   \cite{uni2021}     & \citetitle{uni2021}       & pi-hole, OpenVPN, dan docker & Server vpn dengan menggunakan protokol OpenVPN, yang menggunakan pi-hole sebagai sistem blocking domain berbahaya. Server tersebut berjalan di dalam docker container.                                                                                        \\ 
-  \hline
   \cite{yusoff2020}  & \citetitle{yusoff2020}    & pi-hole dan raspberry pi     & DNS Filtering dengan menggunakan pi-hole yang berjalan di atas raspberry pi. Selain itu dengan menggunakan regular expression, pi-hole dapat mengenali situs-situs dewasa sehingga dapat menjadi solusi parental control.                                     \\ 
-  \hline
   \cite{sarath2020}  & \citetitle{sarath2020}    & Dnsmasq                      & Server DNS dengan menggunakan Dnsmasq yang berjalan di atas raspberry pi. Sistem ini dapat menjadi pilihan untuk mencegah client mengakses domain yang berbahaya. Sistem ini dapat menjadi pilihan untuk diimplementasikan di usaha kelas menengah ke bawah.  \\ 
-  \hline
   \cite{wahyudi2020} & \citetitle{wahyudi2020}   & pi-hole, ubuntu server       & Server DNS pi-hole yang berjalan di atas sistem operasi ubuntu server. Sistem ini diimplementasikan oleh penulis di jaringan SMK TIK Darussalam Medan.                                                                                                        \\ 
-  \hline
   \cite{habibi2022}  & \citetitle{habibi2022}    & pi-hole                      & DNS filtering diimplementasikan di jaringan sehingga mengurangi penggunaan data pada jaringan internet warga, sehingga jaringan tersebut lebih optimal.                                                                                                       \\
-  \hline
-  \end{longtable}
+  \end{longtblr}
   
   %\newpage
 
