@@ -53,4 +53,58 @@
   komponen-komponen HTML dengan menuliskan
   \textit{regular-expression}.
 
+  \paragraph*{} Berikut ini merupakan contoh penggunaan \textit{library} BeautifulSoup.
+
+  \begin{minted}[frame=lines, framesep=2mm, baselinestretch=1.2, bgcolor=LightGray, fontsize=\footnotesize, linenos]{python}
+from mitmproxy import http
+from mitmproxy import ctx
+from bs4 import BeautifulSoup
+
+class ReplaceHTML:
+  filter = "ads"
+
+  def response(self, flow: http.HTTPFlow):
+    html = BeautifulSoup(flow.response.content, "lxml")
+    for div in html.find_all('div', attrs={"class":filter}):
+      div.decompose()
+    flow.response.content = str(html).encode("utf8")
+
+addons = [ReplaceHTML()]
+  \end{minted}
+
+  \paragraph*{} Kode di atas menggunakan library yang
+  disediakan oleh mitmproxy, dan BeautifulSoup. Di kode
+  tersebut terdapat \textit{events} response.
+  \textit{Events} ini dipicu sebelum response sampai di
+  perangkat \textit{client}. Kemudian \textit{content} dari
+  response di-\textit{parsing} oleh BeautifulSoup menggunakan
+  lxml. Setelah itu dilakukan perulangan yang akan mencari
+  elemen 'div' yang mengandung kata \textit{"ads"} di
+  kelasnya, dan menghapus elemen tersebut. Setelah itu
+  content yang sudah diolah tadi, dikembalikan menjadi
+  bentuk teks, dan diteruskan ke perangkat client.
+
+  \begin{minted}[frame=lines, framesep=2mm, baselinestretch=1.2, bgcolor=LightGray, fontsize=\footnotesize, linenos]{python}
+from mitmproxy import ctx
+from mitmproxy import http
+import json
+
+class ReplaceJSON
+  def response(flow: http.HTTPFlow) -> None:
+      if flow.request.url.startswith("http://example.com/"):
+          data = json.loads(flow.response.get_text())
+          data["ads"][0]["advertisement"] = False
+          flow.response.text = json.dumps(data)
+
+addons = [ReplaceJSON()]
+  \end{minted}
+
+  \paragraph*{} Kode di atas merupakan contoh penggunaan
+  \textit{library} JSON, sama seperti kode sebelumnya, kode
+  ini menggunakan \textit{response}. Dalam kode ini jika url
+  yang diakses merupakan "example.com" maka data akan
+  di-\textit{parsing} dengan menggunakan library json.
+  Kemudian data JSON yang dari \textit{advertisement} akan
+  diubah menjadi \textit{False}.
+
 \end{document}
