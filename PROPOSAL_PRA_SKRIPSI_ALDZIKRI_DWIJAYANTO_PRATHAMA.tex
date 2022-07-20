@@ -2,12 +2,15 @@
 \usepackage{enumitem}
 \usepackage{fontspec}
 \usepackage{graphicx}
+\usepackage{eso-pic}
 \usepackage{microtype}
 \usepackage{tocloft} %untuk daftar isi
 \usepackage{hyperref}
 \usepackage{csquotes}
 \usepackage{tabularray}
 \usepackage{minted}
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
 \usepackage{titlesec} %untuk setel judul bab
 \usepackage{setspace} %untuk spacing
 \usepackage[a4paper, tmargin=4cm, bmargin=3cm, lmargin=4cm, rmargin=3cm]{geometry}
@@ -19,6 +22,11 @@
 \setmainfont{Times New Roman}
 \setmonofont{Courier New}
 \graphicspath{ {./images/}{../images/} }
+
+%%%%% Setelan Minted, Untuk kode %%%%% 
+% rounded corner
+%\BeforeBeginEnvironment{minted}{\begin{tcolorbox}}%
+%\AfterEndEnvironment{minted}{\end{tcolorbox}}%
 
 % Daftar pemenggalan suku kata dan istilah dalam LaTeX
 \input{_internals/hype.indonesia}
