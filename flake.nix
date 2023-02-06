@@ -4,12 +4,23 @@
     nixpkgs.url = github:NixOS/nixpkgs/nixpkgs-unstable;
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem
-      (system:
-        let pkgs = nixpkgs.legacyPackages.${system}; in
+  outputs = { self, nixpkgs }: let
+      forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
+      nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; });
+    in
+    {
+      devShells = forAllSystems (system:
+        let
+          pkgs = nixpkgsFor.${system};
+        in
         {
-          devShells.default = import ./shell.nix { inherit pkgs; };
-        }
-      );
+          default = pkgs.mkShell {
+            buildInputs = with pkgs; [
+              texlab
+              texlive.combined.scheme-full
+              python39Packages.pygments
+            ];
+          };
+        });
+    };
 }

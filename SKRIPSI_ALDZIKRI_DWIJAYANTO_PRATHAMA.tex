@@ -1,16 +1,18 @@
-\documentclass[a4paper,12pt]{article}%ubah ke report ketika skripsi
+\documentclass[a4paper,12pt]{report}
+%pakai documentclass article ketika proposal
+%pakai documentclass report ketika skripsi
 \usepackage{enumitem}
 \usepackage{fontspec}
 \usepackage{graphicx}
 \usepackage{eso-pic}
 \usepackage{microtype}
 \usepackage{tocloft} %untuk daftar isi
+\usepackage{tocbibind}
 \usepackage{hyperref}
 \usepackage{csquotes}
 \usepackage{tabularray}
+\usepackage{url}
 \usepackage{minted}
-\usepackage{xcolor} % to access the named colour LightGray
-\definecolor{LightGray}{gray}{0.9}
 \usepackage{titlesec} %untuk setel judul bab
 \usepackage{setspace} %untuk spacing
 \usepackage[a4paper, tmargin=4cm, bmargin=3cm, lmargin=4cm, rmargin=3cm]{geometry}
@@ -22,6 +24,11 @@
 \setmainfont{Times New Roman}
 \setmonofont{Courier New}
 \graphicspath{ {./images/}{../images/} }
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
 
 %%%%% Setelan Minted, Untuk kode %%%%% 
 % rounded corner
@@ -33,9 +40,12 @@
 
 %%%%%% Setelan section %%%%%
 
-\titleformat{\chapter}[display]{\normalfont\LARGE\bfseries\filcenter}{Bab \thechapter}{5pt}{\huge}
+\titlespacing{\section} {0pt}{2.5ex plus 1ex minus .2ex}{1.3ex plus .2ex}
+\titlespacing{\subsection} {0pt}{2.25ex plus 1ex minus .2ex}{0.5ex plus .2ex}
+
+\titleformat{\chapter}[display]{\normalfont\normalsize\bfseries\filcenter}{BAB \thechapter}{5pt}{\normalsize}
 % Buat judul chapter lebih ke-atas
-\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+\titlespacing*{\chapter}{0pt}{-50pt}{24pt}
 
 
 %%%%% Setelan daftar isi %%%%%
@@ -44,14 +54,32 @@
 % Ubah judul daftar isi (aslinya inggris)
 \addto\captionsbritish{% sesuaikan caption dengan nama bahasa yg digunakan
   \renewcommand{\contentsname}
-    {Daftar Isi}
+    {DAFTAR ISI}
+}
+\addto\captionsbritish{% sesuaikan caption dengan nama bahasa yg digunakan
+  \renewcommand{\listtablename}
+    {DAFTAR TABEL}
+}
+\addto\captionsbritish{% sesuaikan caption dengan nama bahasa yg digunakan
+  \renewcommand{\listfigurename}
+    {DAFTAR GAMBAR}
 }
 
 %Titik-titik di daftar isi
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 %Tengahkan judul daftar isi
-\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Huge\bfseries}
+\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\normalsize\bfseries}
 \renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
+
+\renewcommand{\cftlottitlefont}{\hspace*{\fill}\normalsize\bfseries}
+\renewcommand{\cftafterlottitle}{\hspace*{\fill}}
+\renewcommand{\cftloftitlefont}{\hspace*{\fill}\normalsize\bfseries}
+\renewcommand{\cftafterloftitle}{\hspace*{\fill}}
+
+\renewcommand{\cftchapfont}{\normalfont}
+\renewcommand\cftsecfont{\normalsize}
+\renewcommand\cftchappagefont{\normalsize}
 
 %%%%%% Setelan BibLatex %%%%%
 % hapus in:
@@ -82,33 +110,68 @@
    \setlength{\parskip}{0pt}}
   {\newpage}
 
+\titleformat{\section}
+  {\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\fontsize{12}{15}\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{12}{15}\bfseries}{\thesubsubsection}{1em}{}
 
 \begin{document}
 %%% Spacing = 1
+\pagenumbering{roman}
 \begin{singlespace}
 
 \subfile{bagian/cover}
 \newpage
+\begin{doublespace}
+\subfile{bagian/judul}
+\end{doublespace}
+\newpage
+\subfile{bagian/lembar_persetujuan}
+\newpage
+\subfile{bagian/halaman_pengesahan}
+\newpage
+\subfile{bagian/pernyataan}
+\newpage
+\subfile{bagian/persembahan}
+\newpage
+\subfile{bagian/moto}
+\newpage
+\subfile{bagian/pengantar}
+\newpage
 \tableofcontents
+\newpage
+\listoftables
+\newpage
+\listoffigures
 \newpage
 
 \end{singlespace}
 
 %%% Spacing = 2
-\begin{doublespace}
-
-\subfile{bagian/lembar_persetujuan}
 
 \newpage
+\pagenumbering{arabic}
+\begin{singlespace}
+  \subfile{bagian/intisari}
+\end{singlespace}
+\begin{doublespace}
+  
 \subfile{bagian/bab_1/bab_1}
 
 \subfile{bagian/bab_2/bab_2}
 
 \subfile{bagian/bab_3/bab_3}
 
-\newpage
-\printbibliography[title=Daftar Pustaka]
+\subfile{bagian/bab_4/bab_4}
+
+\subfile{bagian/bab_5/bab_5}
 
 \end{doublespace}
+
+\newpage
+\printbibliography[title=DAFTAR PUSTAKA]
+
 
 \end{document}

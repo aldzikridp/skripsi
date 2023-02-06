@@ -1,87 +1,54 @@
 \documentclass[./bab_1.tex]{subfiles}
 \begin{document}
 \section{Latar Belakang}
-  \paragraph*{} Hampir seluruh perangkat saat ini terhubung
-  dengan internet, seperti \textit{smartphone}, komputer,
-  dan \textit{smart TV}. Meskipun tekonologi internet
-  sangatlah bermanfaat, tetapi teknologi ini juga
-  menimbulkan ancaman keamanan.
+\paragraph*{}Perkembangan koneksi internet yang semakin
+cepat dan terjangkau mengubah cara bagaimana dunia bekerja.
+Dari bidang komunikasi dan hiburan, hingga bidang komersial
+dan pendidikan, internet telah menjadi hal yang umum di
+masyarakat modern. Di ranah bisnis, internet menciptakan
+peluang baru bagi perusahaan untuk menjangkau pasar yang
+lebih luas dan beroperasi dengan lebih
+efisien dengan cara yang inovatif(\cite{parinda23}). Oleh
+karena itu perusahaan perlu merangkul dan mengintegrasikan
+internet ke dalam infrastruktur yang dimiliki sebagai sarana agar
+tetap unggul dalam ranah bisnis yang terus berkembang.
 
-  \paragraph*{} Dari survey yang dilakukan, mayoritas
-  developer tidak ragu melakukan \textit{personalized-ads}.
-  Jenis iklan ini menggunakan data pengguna untuk memilihkan
-  iklan yang dianggap relevan berdasarkan data pengguna. Hal
-  ini tidak mengherankan karena jenis iklan ini menawarkan
-  pendapatan yang lebih tinggi dibandingkan iklan biasa,
-  karena peluang pengguna membuka iklan yang ditawarkan
-  lebih besar(\cite{tahaei2021}). Penelitian lain juga
-  menunujukkan bahwa 77\% aplikasi Android gratis
-  menggunakan \textit{ad library}(\cite{he2018, jin2021}).
+\paragraph*{}PT.Pundi Mas Berjaya adalah salah satu penyedia
+solusi perangkat lunak di pasar global yang memberikan
+solusi bisnis mengadopsi teknologi informasi terkini. Solusi
+berbasis layanan untuk para pelanggan yang tersebar di
+beberapa negara dan memiliki model pengembangan on-site dan
+off-site. Perusahaan ini merancang dan mengembangkan banyak
+solusi di bidang properti, otomotif, transportasi,
+pengirimanan makanan, pengiriman barang dan ecommerce.
 
-  \paragraph*{} Iklan-iklan yang ditampilkan sering kali
-  sangat intrusif dan menggangu. Contohnya seperti iklan
-  yang menutupi konten, iklan melalui \textit{pop-up}, atau
-  iklan yang otomatis mengarahkan pengunjung ke \textit{tab}
-  baru yang memuat iklan. Atau bahkan menampilkan iklan
-  yang menjurus ke arah konten dewasa.
+\paragraph*{}Tentunya dengan memiliki klien yang banyak dan
+berasal dari perusahaan yang beragam PT.Pundi Mas Berjaya
+memiliki masalah tersendiri. Setiap perusahaan memiliki
+\textit{requirements} dan \textit{tools} masing-masing yang
+unik untuk memenuhi kebutuhan infrastruktur IT perusahaan.
+Dengan begitu tiap-tiap perangkat lunak yang dibuat dan
+di-\textit{host} oleh PT.Pundi Mas Berjaya membutuhkan
+\textit{requirements} yang berbeda pula. Misalnya, perangkat
+lunak untuk perusahaan A menggunakan LAMP \textit{stack} dengan PHP versi 7, sedangkan
+perangkat lunak untuk perusahaan B menggunakan LAMP
+\textit{stack} dengan PHP versi 8.
+Selain itu tiap layanan yang di-\textit{host} harus dengan
+mudah direplikasi untuk membuat \textit{instance} baru,
+contohnya membuat \textit{instance} email server baru untuk
+pelanggan baru.
+Sehingga PT.Pundi Mas Berjaya perlu mengisolasi tiap-tiap
+perangkat lunaknya sehingga dapat bekerja dengan baik dan
+menghindari \textit{conflict} antar versi serta dapat
+disiapkan dan dijalankan dengan cepat.
 
-  \paragraph*{} Masalah lain selain iklan yang mengganggu,
-  adalah masalah keamanan. Banyak layanan yang memasang
-  iklan juga menggunakan layanan \textit{web analytics}
-  untuk melakukan \textit{tracking} terhadap pengunjung atau
-  penggunanya. Layanan web analytics inilah yang dapat
-  menjadi celah keamanan. Contohnya pada tahun 2019, layanan
-  Google Analytics digunakan untuk mengiklankan website
-  phising(\cite{charlie2019}). Sedangkan di tahun 2020,
-  peretas memasukkan kode berbahaya ke dalam website yang
-  diretas, yang mana kode tersebut mengumpulkan informasi
-  kredit pengguna dan mengirimkannya menggunakan Google
-  Analytics, kemudian peretas akan mengakses data kredit
-  yang dikumpulkan di akun Google Analytics
-  miliknya(\cite{ravie2020}).
+\paragraph*{}Maka dari itu, PT.Pundi Mas Berjaya
+mengimplementasikan \textit{containerization} menggunakan
+docker dengan tujuan untuk memaketkan dan mengisolasi
+perangkat lunaknya, mengotomatisasikan \textit{deployment}
+dan manajemen aplikasi, serta memastikan perangkat lunak
+dapat dijalankan di komputer yang berbeda.
 
-  \paragraph*{}Hal-hal tersebut bisa dicegah dengan
-  menggunakan metode DNS \textit{ad-blocking}, dengan metode
-  ini, kita bisa melakukan pemblokiran domain yang melakukan
-  \textit{tracking}, domain yang digunakan sebagai
-  tempat menyimpan kode JavaScript yang berbahaya, atau
-  domain milik penyedia iklan. Tetapi metode
-  ini hanya bisa melakukan pemblokiran berdasarkan nama
-  domain, sehingga jika iklan atau kode JavaScript berada
-  pada domain yang sama dengan website utama, maka kita
-  harus mengizinkan iklan, dan kode JavaScript berjalan,
-  atau memblokir domain website tersebut sehingga tidak bisa
-  diakses.
-
-  \paragraph*{}Metode lain adalah menggunakan
-  \textit{add-on} peramban, seperti \textit{UBlock Origin}.
-  Metode ini mampu melakukan \textit{blocking} terhadap
-  iklan atau kode JavaScript yang berbahaya, walaupun
-  keduanya berada pada domain yang sama dengan website
-  utama. Sayangnya \textit{add-on} ini hanya bisa
-  di-\textit{install} pada peramban tertentu, seperti
-  Mozilla Firefox, dan Chrome Desktop.
-
-  \paragraph*{}Berdasarkan permasalahan yang disebutkan
-  di atas, tujuan saya adalah membangun sistem HTTPS
-  filtering dengan menggunakan Mitmproxy. Sistem ini
-  bertujuan untuk menyaring konten yang tidak diinginkan
-  agar tidak diakses.
-
-  \paragraph*{}Filtering dengan menggunakan Mitmproxy saya
-  pilih karena tools ini merupakan proxy, sehingga bisa
-  digunakan di banyak perangkat seperi metode DNS
-  \textit{ad-blocking}, tetapi bisa di buat sedemikian rupa
-  dengan menuliskan \textit{script} Python sehingga mampu
-  melakukan filtering seperti \textit{add-on} pada browser,
-  atau bahkan melebihinya.
-
-  \paragraph*{}Selain itu kelebihan Mitmproxy yang lain
-  adalah software ini bersifat \textit{open source} dan
-  gratis. Software ini bisa digunakan sebagai alat untuk
-  mencegat, inspeksi, dan memodifikasi lalu lintas web,
-  seperti HTTP/1, HTTP/2, WebSockets, atau protokol lainnya
-  yang dilindungi oleh SSL/TLS.
 \end{document}
 
 

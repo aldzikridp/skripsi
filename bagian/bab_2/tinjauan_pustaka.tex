@@ -1,82 +1,64 @@
 \documentclass[./bab_2.tex]{subfiles}
 \begin{document}
 \section{Tinjauan Pustaka}
-  \paragraph*{}Dalam mengimplementasikan MITM-Proxy untuk
-  HTTPS \textit{filtering}, sebagai pedoman dan pembanding
-  maka digunakan beberapa pustaka yang berkaitan dengan
-  \textit{ad-blocking}. Pustaka yang digunakan sebagai
-  rujukan antara lain:
-
-  \paragraph*{} Dari penelitian yang dilakukan oleh
-  \cite{uni2021}, yang berjudul \citetitle{uni2021}.
-  Tujuan dari dilakukannya penelitian ini adalah untuk
-  mengetahui rancangan sistem \textit{blocking} situs
-  berbahaya dengan menggunakan \textit{pi-hole} berbasis
-  docker dan \textit{openvpn}, dan menguji kemampuan
-  \textit{blocking} situs dan performa dari \textit{pihole}
-  dalam \textit{docker container}.
-
-  \paragraph*{} \cite{yusoff2020}, Melakukan penelitian yang
-  berjudul \textit{\citetitle{yusoff2020}}. Penelitian
-  tersebut bertujuan untuk membangun server openvpn
-  menggunakan Raspberry-pi dan menggunakan pi-hole sebagai
-  sistem \textit{ad-block}. Selain itu penelitian ini juga
-  memanfaatkan kemampuan pi-hole memahami \textit{regular
-  expression} sebagai \textit{parental control} untuk
-  mencegah diaksesnya situs-situs dewasa.
-
-  \paragraph*{} Prosiding dengan judul
-  \textit{\citetitle{sarath2020}}yang ditulis oleh
-  \cite{sarath2020}. Tujuan dari penelitian tersebut adalah
-  membuat sistem keamanan jaringan yang murah untuk bisnis
-  kelas menengah ke bawah, dengan menggunakan Raspberry-pi
-  sebagai perangkat kerasnya. Sedangkan di bagian perangkat
-  lunak, digunakan Dnsmasq. Dnsmasq digunakan sebagai DNS
-  \textit{filtering} dari domain yang dianggap berbahaya.
-
-  \paragraph*{} Prosiding oleh \cite{wahyudi2020}, dengan
-  judul \citetitle{wahyudi2020}. Penelitian ini membahas
-  bagaimana cara mengimplementasikan pi-hole di Ubuntu
-  server sebagai DNS \textit{blocking} pada jaringan SMK TIK
-  Darussalam Medan.
-
-  \paragraph*{} Dari penelitian yang dilakukan oleh
-  \cite{habibi2022} dengan judul \citetitle{habibi2022}.
-  Penelitian ini membahas tentang pemasangan infrastruktur
-  jaringan internet dengan menggunakan \textit{Point to
-  Multipoint}, meminimalkan hilangnya paket data pada saat
-  transmisi menggunakan RED dan PCQ dan menggunakan Sistem
-  pi-hole di server untuk meminimalkan iklan yang muncul di
-  protokol UDP.
-
-  %\newpage
+  \paragraph*{}Dalam mengimplementasikan LAMP \textit{stack}
+  dan email server dengan menggunakan Docker, sebagai
+  pedoman dan pembanding maka digunakan beberapa pustaka
+  yang berkaitan dengan \textit{Docker}. Pustaka yang
+  digunakan sebagai rujukan antara lain:
 
   \DefTblrTemplate{caption-tag}{default}{\textbf{Tabel\hspace{0.25em}\thetable}}
-  \DefTblrTemplate{contfoot-text}{default}{Bersambung ke halaman berikutnya}
-  \DefTblrTemplate{conthead-text}{default}{(Bersambung)}
-  \begin{longtblr}{hlines, vlines, column{1}={0.15\linewidth}, column{2}={0.25\linewidth}, column{3}={0.10\linewidth}, column{4}={0.35\linewidth}} 
-  \textbf{Penulis}   & \textbf{Judul Penelitian} & \textbf{Tools}               & \textbf{Hasil}\\
-  \cite{uni2021}     & \citetitle{uni2021}       & pi-hole, OpenVPN, dan docker & Server vpn dengan menggunakan protokol OpenVPN, yang menggunakan pi-hole sebagai sistem blocking domain berbahaya. Server tersebut berjalan di dalam docker container.                                                                                        \\ 
-  \cite{yusoff2020}  & \citetitle{yusoff2020}    & pi-hole dan raspberry pi     & DNS Filtering dengan menggunakan pi-hole yang berjalan di atas raspberry pi. Selain itu dengan menggunakan regular expression, pi-hole dapat mengenali situs-situs dewasa sehingga dapat menjadi solusi parental control.                                     \\ 
-  \cite{sarath2020}  & \citetitle{sarath2020}    & Dnsmasq                      & Server DNS dengan menggunakan Dnsmasq yang berjalan di atas raspberry pi. Sistem ini dapat menjadi pilihan untuk mencegah client mengakses domain yang berbahaya. Sistem ini dapat menjadi pilihan untuk diimplementasikan di usaha kelas menengah ke bawah.  \\ 
-  \cite{wahyudi2020} & \citetitle{wahyudi2020}   & pi-hole, ubuntu server       & Server DNS pi-hole yang berjalan di atas sistem operasi ubuntu server. Sistem ini diimplementasikan oleh penulis di jaringan SMK TIK Darussalam Medan.                                                                                                        \\ 
-  \cite{habibi2022}  & \citetitle{habibi2022}    & pi-hole                      & DNS filtering diimplementasikan di jaringan sehingga mengurangi penggunaan data pada jaringan internet warga, sehingga jaringan tersebut lebih optimal.                                                                                                       \\
-  \end{longtblr}
-  
-  %\newpage
+  \DefTblrTemplate{contfoot-text}{default}{}
+  \DefTblrTemplate{conthead-text}{default}{}
+  \DefTblrTemplate{middlehead,lasthead}{default}{}
+  \begin{longtblr}[caption= {Tabel Pustaka}]{hlines, vlines,
+    column{1}={0.20\linewidth}, column{2}={0.20\linewidth},
+    column{3}={0.35\linewidth}, column{4}={0.10\linewidth},
+    rowhead=1} 
+  \textbf{Penulis}   & \textbf{Topik} &
+    \textbf{Hasil Penelitian} & \textbf{Teknologi yang digunakan}\\
+    \textcite{wij18} & \citetitle{wij18} & {Menghasilkan aplikasi lowongan kerja yang
+    dibuat menjadi docker images yang dapat berjalan di
+    container docker sehingga dapat dimanfaatkan di penyedia
+    \textit{platform as a service} (PAAS).} & {Docker}\\
 
-  \paragraph*{} Penelitian yang sudah dilakukan di atas,
-  memiliki tujuan yang serupa dengan penelitian ini yaitu
-  \textit{ad-blocking}. Namun di penelitian ini, yang
-  membahas implementasi MITM-Proxy untuk https filtering,
-  menggunakan MITM-Proxy sebagai perangkat lunak utamanya.
+    \textcite{yatno20} & \citetitle{yatno20} &
+    {Mengimplementasikan  sistem  virtualisasi server
+    berbasis docker container di SMK Negeri 1 Rangkasbitung
+    dan pengujian penggunaan sumber daya dari penggunaan
+    Docker sebagai sistemt virtualisasi} & {Docker}\\
+
+    \textcite{mega2021} & \citetitle{mega2021} & {Menghasilkan
+    sistem untuk membantu mahasiswa melakukan praktek
+    pemrograman pada saat pembelajaran jarak jauh. Dengan sistem ini
+    mahasiswa dapat mengerjakan tugas di beragam perangkat
+    dan memudahkan dosen memeriksa hasil praktek.} &
+    {Docker}\\
+
+    \textcite{setyo21} & \citetitle{setyo21} & {Analisa performa
+    microservice yang diimplementasikan di docker container.
+    Dalam penelitian ini disimpulkan docker memiliki
+    efisiensi yang lebih baik dibanding virtualisasi
+    hypervisor.} & {Docker}\\
+
+    \textcite{furnama22} & \citetitle{furnama22} & {Menghasilkan
+    sistem \textit{backend} pembayaran terintegrasi Midtrans dengan
+    arsitektur microservice yang berjalan di atas docker.} &
+    {Docker}\\
+
+    \textcite{putra21} & \citetitle{putra21} & {Penelitian ini
+    menghasilkan sistem cloud storage menggunakan OwnCloud
+    dan Docker. Dengan menggunakan Docker, pemasangan
+    OwnCloud tidak mempengaruhi sistem \textit{host}, selain
+    itu Docker juga menghemat penggunaan resource.} &
+    {Docker}\\
+
+    \textcite{kris22} & \citetitle{kris22} & {Pada penelitian ini
+    menghasilkan sistem web hosting dengan menggunakan
+    Wordpress sebagai CMS yang memanfaatkan nginx sebagai
+    web servernya, sedangkan untuk reverse proxy digunakan
+    Apache Web Server.} & {Docker} \\
+
+    \end{longtblr}
   
-  \paragraph*{} Perbedaan lainnya dari penelitian yang sudah
-  dilakukan adalah tujuan dari penelitian ini adalah
-  membangun sistem yang tidak hanya menyaring berdasarkan
-  domain, tetapi juga menyaring berdasarkan konten yang
-  diakses. Konten yang dimaksud adalah seperti file HTML,
-  CSS, dan JavaScript yang utamanya digunakan untuk
-  menampilkan web, juga respon dari server seperti JSON yang
-  utamanya digunakan di \textit{API}.
 \end{document}

@@ -1,75 +1,187 @@
 \documentclass[./bab_2.tex]{subfiles}
 \begin{document}
 \section{Dasar Teori}
-\begin{enumerate}[label=\textbf{\arabic*.}]
-  \item \textbf{Mitmproxy}
-  \paragraph*{}Mitmproxy adalah seperangkat alat yang
-  menyediakan proxy yang mampu mencegat SSL/TLS untuk
-  protokol HTTP/1, HTTP/2, dan WebSockets(\cite{mitmproxy}).
+%\begin{enumerate}[label=\textbf{\arabic*.}]
+  \subsection{PT.Pundi Mas Berjaya}
+    \paragraph*{} PT.Pundi Mas Berjaya adalah salah satu
+    penyedia solusi perangkat lunak di pasar global yang
+    memberikan solusi bisnis mengadopsi teknologi informasi
+    terkini. Solusi berbasis layanan untuk para pelanggan
+    yang tersebar di beberapa negara dan memiliki model
+    pengembangan on-site dan off-site. Sejak berdiri pada
+    tahun 2014, Perusahaan telah merancang, mengembangkan
+    dan digunakan banyak solusi di bidang properti,
+    otomotif, transportasi, pengirimanan makanan, pengiriman
+    barang dan ecommerce.
 
-  \paragraph*{}Fitur dari Mitmproxy antara lain mencegat
-  \textit{request} dan \textit{response} dari  HTTP dan
-  HTTPS dan memodifikasinya, Kemampuan untuk mengubah lalu
-  lintas HTTP dengan menggunakan \textit{script} Python,
-  dll(\cite{mitmproxy}).
+    \paragraph*{} PT.Pundi Mas Berjaya memiliki tim yang
+    kuat dengan ukuran pelaksanaan proyek besar dan
+    mengerahkan seluruh kemampuannya untuk memberikan
+    pelayanan yang berkualitas tinggi kepada pelanggan.
+    Salah satu kunci keberhasilan PT.Pundi Mas Berjaya
+    adalah adaptasi perusahaan tersebut
+    terhadap berbagai macam dan aneka kebutuhan akan sistem
+    informasi komputer sehingga menghasilkan Manajemen
+    Kualitas, Manajemen Proyek, kebutuhan Infrastruktur, dan
+    lainnya dengan sempurna untuk memberikan kepuasan kepada
+    para pelanggan PT.Pundi Mas Berjaya. Pelayanan PT.Pundi Mas Berjaya sifatnya terpadu
+    menggunakan media responsif website, mobile website,
+    mobile apps untuk mendukung aktifitas yang lebih
+    optimal.
 
-  \pagebreak
-
-  \item \textbf{HTTPS}
-  \paragraph*{}HTTPS (Hypertext Transfer Protocol Secure)
-  adalah protokol komunikasi internet yang melindungi
-  integritas dan kerahasiaan data antara komputer pengguna
-  dan situs. Pengguna menginginkan pengalaman online yang
-  aman dan bersifat pribadi saat menggunakan situs.
-
-  \paragraph*{}Data yang dikirim menggunakan HTTPS diamankan
-  melalui protokol Transport Layer Security (TLS), yang
-  memberikan tiga lapis perlindungan utama:
-  \begin{enumerate}
-    \item Enkripsi\\
-      Mengenkripsi data pertukaran untuk menjaga keamanannya
-      dari penyadap. Artinya, saat pengguna menjelajahi
-      situs, tidak ada yang dapat "menguping" percakapan,
-      melacak aktivitas di berbagai halaman, atau mencuri
-      informasi mereka.
-    \item Integritas data\\
-      Data tidak dapat diubah atau dirusak selama transfer,
-      dengan sengaja atau tidak, tanpa terdeteksi.
-    \item Autentikasi\\
-      Membuktikan bahwa pengguna berkomunikasi dengan
-      situs yang diinginkan. Protokol tersebut melindungi
-      dari serangan \textit{man in the middle} dan membangun
-      kepercayaan pengguna, yang dapat memberikan keuntungan
-      lain untuk bisnis.
-  \end{enumerate}
-  (\cite{googledev-https})
-
-  \pagebreak
-
-  \item \textbf{Web Content Filtering}
-    \paragraph*{}Web content filtering merupakan saringan
-    konten website yang digunakan oleh perorangan, kelompok,
-    maupun organisasi untuk melakukan penyaringan terhadap
-    situs-situs yang tidak diperbolehkan oleh pihak berwenang
-    maupun yang tidak berhubungan dengan tujuan bisnis atau
-    organisasi agar tidak dapat diakses(\cite{dewi2021}).
-
-  \item \textbf{Proxy Server}
-     \paragraph*{}Proxy server (peladen proxy) adalah sebuah
-     komputer server atau program komputer yang dapat bertindak
-     sebagai komputer lainnya untuk melakukan request terhadap
-     content dari Internet atau Intranet(\cite{rendra2013}).
+    PT.Pundi Mas Berjaya memiliki tim berpengalaman di
+    bidang:
+    \begin{enumerate}
+      \item Manajemen teknis website
+      \item Manajemen teknis mobile application
+      \item Manajemen bisnis untuk aplikasi yang sedang dibangun
+      \item Manajemen kendali mutu untuk aplikasi yang dijalankan
+    \end{enumerate}
     
-     \paragraph*{}Proxy server bertindak sebagai gateway
-     terhadap dunia ini Internet untuk setiap komputer clien.
-     Proxy server tidak terlihat oleh komputer client: seorang
-     pengguna yang berinteraksi dengan Internet melalui sebuah
-     proxy server tidak akan mengetahui bahwa sebuah proxy
-     server sedang menangani request yang dilakukannya. Web
-     server yang menerima request dari proxy server akan
-     menginterpretasikan request-request tersebut seolah-olah
-     request itu datang secara langsung dari komputer client,
-     bukan dari proxy server(\cite{rendra2013}).
+    Sedangkan fokus bisnis dari perusahaan ini antara lain:
+    \begin{enumerate}
+      \item Aplikasi properti online kolaborasi dalam dan luar negeri
+      \item Aplikasi transportasi berbasis aplikasi
+      \item Aplikasi bank data untuk pebisnis
+      \item Aplikasi pelayanan pengantaran makanan
+      \item Aplikasi pelayanan pengiriman bunga/parcel
+      \item Aplikasi Deal untuk aneka voucher
+      \item Aplikasi e-commerce
+    \end{enumerate}
 
-\end{enumerate}
+  \subsection{Container}
+    \paragraph*{}Menurut \textcite{shah19}
+    \textit{Containerization} adalah cara untuk menjalankan
+    beberapa perangkat lunak yang berbeda di satu mesin.
+    Yang masing-masingnya berjalan di dalam lingkungan yang
+    terisolasi yang disebut sebagai \textit{container}.
+    \textit{Container} adalah lingkungan yang terisosali
+    untuk perangkat lunak. Container mengikat semua berkas
+    dan \textit{library} yang dibutuhkan oleh aplikasi untuk
+    berfungsi dengan baik.
+
+  \subsection{Docker}
+    \paragraph*{}Docker adalah sebuah project
+    \textit{open-source} yang menyediakan platform terbuka
+    untuk developer maupun sysadmin untuk dapat membangun,
+    mengemas, dan menjalankan aplikasi dimanapun di dalam
+    sebuah container(\cite{docker_overview}).
+
+    \paragraph*{}Docker menggunakan arsitektur client-server. Dimana client
+    dan docker berkomunikasi dengan daemon docker, yang
+    melakukan suatu tindakan untuk membangun,
+    menjalankan, dan mendistribusikan container
+    docker. Client docker dan daemon dapat berjalan pada
+    sistem yang sama. Client docker dan daemon
+    berkomunikasi menggunakan REST API, melalui soket
+    UNIX atau antarmuka jaringan(\cite{docker_overview}).
+
+  \subsection{Docker Compose}
+    \paragraph*{}Docker Compose adalah alat untuk mendefinisikan
+    dan menjalankan aplikasi Docker multi-kontainer. Dengan
+    Docker Compose, file YAML bisa digunakan untuk mengonfigurasi
+    layanan aplikasi. Kemudian, hanya dengan satu perintah, Docker
+    akan membuat dan memulai semua layanan dari konfigurasi
+    YAML tersebut.
+
+  \subsection{LAMP \textit{stack}}
+    \paragraph*{}LAMP \textit{stack} adalah gabungan dari empat
+    teknologi perangkat lunak berbeda yang digunakan oleh
+    developer untuk membangun situs web dan aplikasi web.
+    LAMP adalah singkatan dari sistem operasi Linux; server
+    web Apache; server basis data MySQL; dan bahasa
+    pemrograman PHP. Keempat teknologi ini bersifat
+    \textit{open-source}, yang berarti LAMP dikelola komunitas dan
+    tersedia secara bebas untuk digunakan oleh siapa saja.
+    Developer menggunakan LAMP \textit{stack} untuk membuat,
+    meng-host, dan memelihara konten web. LAMP
+    \textit{stack}
+    adalah solusi populer yang mendukung banyak situs web
+    yang biasa gunakan saat ini(\cite{amazon_lamp}).
+
+  \subsection{Email Server}
+    \paragraph*{} Email server adalah perangkat lunak yang
+    berfungsi untuk mengirim dan menerima email. Email
+    server biasanya menjadi seebutan untuk \textit{Mail
+    Transfer Agent} (MTA) dan \textit{Mail Delivery Agent}
+    (MDA), yang keduanya memiliki fungsi yang
+    berbeda(\cite{cf_email}).
+
+    \paragraph*{} Pesan email dikirim dan diterima dengan
+    menggunakan dua jenis email server: \textit{outgoing
+    mail server} atau \textit{Mail Transfer Agent}, dan
+    \textit{incoming mail server} atau \textit{Mail Delivery
+    Agent}. MTA akan menerima pesan yang keluar dari
+    \textit{email client} pengirim, kemudian mengirimkannya
+    ke MDA, yang mana bertanggung jawab untuk menyimpan
+    sementara dan menyampaikan pesan ke \textit{email
+    client} penerima(\cite{cf_email}).
+
+    \subsection{DNS TXT Record}
+    TXT Record, Merupakan sebuah record DNS yang digunakan
+    untuk menyimpan informasi berupa text pada domain. Teks
+    pada TXT Records harus diformat sesuai dengan teknologi
+    yang akan gunakan(\cite{rfc1464}).
+
+    \subsection{DKIM}
+    \paragraph*{} Merujuk pada dokumen RFC 6376, DKIM
+    \textit{(DomainKeys Identified Mail)} adalah teknik untuk
+    memverifikasi keaslian pesan email dengan memeriksa
+    tanda tangan digital yang disematkan di header pesan.
+    Tanda tangan ini dihasilkan dengan mengenkripsi hash
+    konten pesan dengan \textit{private key}, yang dapat
+    diverifikasi oleh penerima menggunakan \textit{public
+    key} yang diterbitkan dalam data DNS TXT domain
+    pengirim(\cite{rfc6376}).
+
+    \paragraph*{} Dengan DKIM email server penerima dapat
+    memverifikasi bahwa pesan yang masuk tidak diubah
+    saat transit dan berasal dari domain yang digunakan.
+    DKIM \textit{signature} dapat dibuat dengan menambahkan
+    header ke pesan yang berisi informasi tentang pesan dan
+    tanda tangan kriptografi dari isi pesan dan beberapa
+    header. Server email penerima kemudian dapat menggunakan
+    informasi di header DKIM dan kunci publik yang
+    dipublikasikan di DNS domain pengirim untuk
+    memverifikasi keaslian dan integritas pesan(\cite{rfc6376}).
+
+    \subsection{SPF}
+    \paragraph*{} Menurut dokumen RFC 7208, SPF \textit{(Sender
+    Policy Framework)} adalah protokol autentikasi email yang
+    dirancang untuk mendeteksi dan mencegah spoofing email
+    dengan cara memverifikasi identitas domain yang diklaim
+    berasal dari email. SPF bekerja dengan memberikan daftar
+    alamat IP atau nama host pengiriman resmi untuk domain
+    di DNS, dan server email penerima dapat menggunakan
+    informasi tersebut untuk memvalidasi keaslian pesan
+    masuk(\cite{rfc7208}).
+
+    \paragraph*{} Saat email diterima, server email penerima
+    memeriksa data SPF untuk domain pada header "From" pesan
+    untuk menentukan apakah pengirim diizinkan untuk
+    mengirim email atas nama domain yang digunakan. Jika
+    server pengirim tidak tercantum dalam catatan SPF, pesan
+    tersebut mungkin akan ditandai sebagai spam atau bahkan
+    langsung ditolak(\cite{rfc7208}).
+
+    \subsection{DMARC}
+    \paragraph*{} Menurut dokumen RFC 7489, DMARC
+    \textit{(Domain-based Message Authentication, Reporting \&
+    Conformance)} merupakan metode autentikasi, pengaturan
+    dan pelaporan yang menggunakan
+    kombinasi metode autentikasi SPF (Sender Policy
+    Framework) dan DKIM (DomainKeys Identified Mail) untuk
+    menentukan apakah pesan email itu sah. Dengan
+    menggunakan DMARC, email server penerima dapat
+    mengambil tindakan yang sesuai, seperti menolak atau
+    mengkarantina pesan, berdasarkan peraturan yang
+    dipublikasikan pemilik domain di
+    DMARC-nya(\cite{rfc7489}).
+
+    DMARC juga memiliki mekanisme pelaporan bagi pemilik
+    domain untuk menerima umpan balik tentang pesan yang lulus
+    atau gagal dalam evaluasi DMARC, dan membantu pemilik
+    domain memantau pengiriman email dan mendeteksi potensi terjadinya
+    spoofing email(\cite{rfc7489}).
+%\end{enumerate}
 \end{document}

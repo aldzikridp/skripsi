@@ -1,20 +1,14 @@
 \documentclass[./bab_1.tex]{subfiles}
 \begin{document}
 \section{Ruang Lingkup}
-  \paragraph*{} Untuk membatasi cakupan dari sistem HTTPS filtering dengan
-    MITM-Proxy ini maka dibuat ruang lingkup sebagai berikut:
+  \paragraph*{} Berikut ruang lingkup untuk dapat mencapai sasaran dan tujuan yang diharapkan dari peneliti :
     \begin{enumerate}
-      \item Sistem yang dibuat merupakan sistem proxy yang
-      bersifat non-transparent.
-      \item Sistem digunakan untuk menyaring \textit{response}
-      yang melalui MITM-Proxy.
-      \item Sistem bertujuan untuk menghilangkan konten-konten
-      yang tidak diinginkan sehingga konten tersebut tidak
-      dimuat dan/atau dijalankan oleh perangkat \textit{client}.
-      \item Script yang akan dimuat oleh MITM-Proxy ditulis
-      dengan menggunakan bahasa pemrograman Python.
-      \item Server proxy yang digunakan adalah MITM-Proxy.
-      \item Sistem akan diujikan dengan menggunakan halaman
-      web \textit{dummy}.
+      \item Email server yang dibangun bisa mengirim email
+        ke akun email Gmail tanpa ditandai sebagai spam.
+      \item Sistem dibangun memanfaatkan docker.
+      \item Menggunakan Image LAMP dan email server yang
+        sudah tersedia di Docker Hub.
+      \item Sistem operasi yang digunakan untuk menjalankan
+        docker adalah Ubuntu server.
     \end{enumerate}
 \end{document}
