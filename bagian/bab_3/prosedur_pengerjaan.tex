@@ -65,7 +65,7 @@ protokol imap. Spamassasin untuk menyaring email yang masuk
 dari email spam. Dan Fail2ban untuk memblokir IP yang
 mencoba melakukan \textit{brute force} terhadap server.
 Container ini juga mengekspos port ke publik, yaitu:
-\begin{itemize}
+\begin{enumerate}
   \item 25 : digunakan untuk mengirimkan dan menerima email
     ke email server lain. Serta menerima email dari email
     client pengguna tanpa TLS yang akan diteruskan ke server
@@ -79,6 +79,6 @@ Container ini juga mengekspos port ke publik, yaitu:
     enkripsi TLS.
   \item 993 : sama dengan port 143 tetapi menggunakan
     enkripsi startTLS.
-\end{itemize}
+\end{enumerate}
 
 \end{document}
